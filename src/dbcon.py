@@ -8,3 +8,6 @@ def azureconn():
 
     file = 4
     return file
+
+import pandas as pd
+print(pd.__version__)
