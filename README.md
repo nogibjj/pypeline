@@ -1,4 +1,4 @@
-# PYPELINE
+# PYPELINE [![Pylint CI](https://github.com/nogibjj/pypeline/actions/workflows/makefile.yml/badge.svg)](https://github.com/nogibjj/pypeline/actions/workflows/makefile.yml)
 A data pipeline manager. 
 
 The microservice allows users to create, schedule, and monitor data pipelines for tasks such as data extraction, transformation, and loading. 
