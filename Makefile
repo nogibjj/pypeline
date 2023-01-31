@@ -2,11 +2,11 @@ install:
 	pip install -r requirements.txt
 
 format:	
-	black src/*.py 
+	black app/*.py 
 
 lint:
-	pylint --disable=R, src/*.py
+	pylint --disable=R, app/*.py
 
 refactor: format lint
 		
-all: install lint test format deploy
+all: install lint test format
