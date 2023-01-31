@@ -1,3 +1,1 @@
-"""
-Function to do the data transformations 
-"""
+"""Function to do the data transformations"""

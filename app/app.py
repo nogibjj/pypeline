@@ -8,6 +8,7 @@ from src import extract
 
 app = FastAPI()
 
+
 @app.post("/create")
 async def create_pipeline(file: str):
     """function to get user data"""
