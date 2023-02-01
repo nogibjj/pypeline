@@ -53,14 +53,9 @@ def summary_stats(data):
     return cols_rows, data_desc
 
 
-def remove_missing(data, ref:str = "all"):
+def remove_missing(data):
     """function to create summary stats object"""
-    if ref == "all":
-        # drop the rows where all elements are missing.
-        no_na_object = data.dropna(how="all", inplace=True)
-    else:
-        # drop the rows where at least one element is missing.
-        no_na_object = data.dropna()
+    no_na_object = data.dropna()
     return no_na_object
 
 

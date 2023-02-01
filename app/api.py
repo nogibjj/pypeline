@@ -32,23 +32,16 @@ async def data_summary():
 async def choose_transformation(task: str):
     """function to choose transformation to apply to data"""
     data = data_hold[0]
-    # match = re.search(r"\bmissing\b", task)
-    if task == "missing":
-        if task.endswith("all"):
-            clean = transform.remove_missing(data, "all")
-        else:
-            clean = transform.remove_missing(data)
-    else:
-        # match = re.search(r"\bduplicate\b", task)
-        col = task[2]
-        if task.endswith("last"):
-            clean = transform.remove_dups(data, col, "last")
-        else:
-            clean = transform.remove_dups(data, col)
-    return clean
+    if task == "missing" :
+        clean = data.dropna()
+    data_hold.append(clean)
+    result = clean.to_json(orient="table")   
+    return result
 
 
 @app.get("/extract")
-async def extract(formatted_object: object):
+async def extract():
     """function to to return formatted data as csv"""
-    return formatted_object
+    data = data_hold[1]
+    cleandf = data.to_json(orient="index")  
+    return cleandf
