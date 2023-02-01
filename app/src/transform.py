@@ -48,8 +48,9 @@ def summary_stats(data):
     """function to create summary stats object"""
     cols = len(data.columns)
     rows = data.shape[0]
+    cols_rows = {"columns": cols,"rows" : rows}
     data_desc = data.describe().to_dict()
-    return cols, rows, data_desc
+    return cols_rows, data_desc
 
 
 def remove_missing(data, ref:str = "all"):
