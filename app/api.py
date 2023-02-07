@@ -35,7 +35,7 @@ async def choose_transformation(task: str):
     if task == "missing":
         clean = data.dropna()
     data_hold.append(clean)
-    result = clean.to_json(orient="table")
+    result = clean.to_json(orient="records")
     return result
 
 
@@ -43,5 +43,5 @@ async def choose_transformation(task: str):
 async def extract():
     """function to to return formatted data as csv"""
     data = data_hold[1]
-    cleandf = data.to_json(orient="index")
+    cleandf = data.to_json(orient="records")
     return cleandf
